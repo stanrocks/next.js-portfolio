@@ -9,7 +9,6 @@ export default function Home() {
 				<title>Stan Rocks Portfolio</title>
 			</Head>
 
-			{/* Header */}
 			<Header />
 
 			{/* Hero */}
