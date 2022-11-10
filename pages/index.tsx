@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -7,14 +8,20 @@ export default function Home() {
 			<Head>
 				<title>Stan Rocks Portfolio</title>
 			</Head>
-			<h1 className="text-blue-500">Portfolio</h1>
 
 			{/* Header */}
+			<Header />
+
 			{/* Hero */}
+
 			{/* About */}
+
 			{/* Experience */}
+
 			{/* Skills */}
+
 			{/* Projects */}
+
 			{/* Contact Me */}
 		</div>
 	);
