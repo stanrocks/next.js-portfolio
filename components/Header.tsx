@@ -23,10 +23,23 @@ export default function Header({}: Props) {
 				}}
 				className="flex flex-row items-center">
 				{/* Social Icons */}
-				<SocialIcon url="https://linkedin.com/in/stanrocks/" />
-				<SocialIcon url="https://github.com/stanrocks" />
-				<SocialIcon url="https://t.me/Jesus_Dafuq_Le_Bombom" />
+				<SocialIcon
+					fgColor="gray"
+					bgColor="transparent"
+					url="https://linkedin.com/in/stanrocks/"
+				/>
+				<SocialIcon
+					fgColor="gray"
+					bgColor="transparent"
+					url="https://github.com/stanrocks"
+				/>
+				<SocialIcon
+					fgColor="gray"
+					bgColor="transparent"
+					url="https://t.me/Jesus_Dafuq_Le_Bombom"
+				/>
 			</motion.div>
+
 			<motion.div
 				initial={{
 					x: 500,
@@ -38,7 +51,9 @@ export default function Header({}: Props) {
 					opacity: 1,
 					scale: 1,
 				}}
-				transition={{ duration: 1.5 }}
+				transition={{
+					duration: 1.5,
+				}}
 				className="flex flex-row items-center text-gray-300 cursor-pointer">
 				<SocialIcon
 					className="cursor-pointer"
