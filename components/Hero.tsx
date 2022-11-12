@@ -10,7 +10,7 @@ type Props = {};
 export default function Hero({}: Props) {
 	const [text, count] = useTypewriter({
 		words: [
-			"Hi, this is Stan Rocks's page",
+			"Hi, this is Stan Rocks",
 			"Guy-who-loves-coffee.tsx",
 			"<ButLovesToCodeMore />",
 		],
@@ -19,7 +19,8 @@ export default function Hero({}: Props) {
 	});
 
 	return (
-		<div className="flex h-screen flex-col items-center justify-center space-y-8 overflow-hidden text-center">
+		// overflow-hidden
+		<div className="flex h-screen flex-col items-center justify-center space-y-8 text-center">
 			<BackgroundCircles />
 			<Image
 				className="relative mx-auto h-32 w-32 rounded-full object-cover"
@@ -31,7 +32,7 @@ export default function Hero({}: Props) {
 				placeholder="blur" // Optional blur-up while loading
 			/>
 			<div className="z-20">
-				<h2 className="pb-2 text-sm uppercase tracking-[15px] text-gray-500">
+				<h2 className="-mr-[15px] pb-2 text-sm uppercase tracking-[15px] text-gray-500">
 					Software Engineer
 				</h2>
 				<h1 className="px-10 text-5xl font-semibold lg:text-6xl">
