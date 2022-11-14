@@ -22,7 +22,7 @@ export default function Home() {
 		// 1. change circle sizes (gotta do it anyway to adapt for mobile devices)
 		// 2. count header height (now it's fixed as 50+20+20px which is also questionable)
 		// and add it to hero component's top padding I guess
-		<div className="z-0 h-screen overflow-scroll overflow-x-hidden bg-[rgb(36,36,36)] text-white">
+		<div className="z-0 h-screen overflow-y-scroll bg-[rgb(36,36,36)] text-white scrollbar overflow-x-hidden scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
 			<Head>
 				<title>Stan Rocks Portfolio</title>
 			</Head>

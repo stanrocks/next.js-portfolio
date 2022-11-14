@@ -53,12 +53,6 @@ export default function ExperienceCard({}: Props) {
 						obcaecati rem. Ullam aut quis repellat, quos porro officia sequi
 						eius? Ab omnis culpa repellat!
 					</li>
-					<li>
-						Summary points Lorem ipsum dolor sit, amet consectetur adipisicing
-						elit. Sit eos molestias labore. Reprehenderit aliquid dicta
-						obcaecati rem. Ullam aut quis repellat, quos porro officia sequi
-						eius? Ab omnis culpa repellat!
-					</li>
 				</ul>
 			</div>
 		</article>
