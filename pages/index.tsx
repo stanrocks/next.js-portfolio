@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import About from "../components/About";
 import ContactMe from "../components/ContactMe";
 import Header from "../components/Header";
@@ -64,6 +65,19 @@ export default function Home() {
 				className="snap-start">
 				<ContactMe />
 			</section>
+
+			<Link href="#hero">
+				<footer className="sticky bottom-5 w-full cursor-pointer">
+					<div className="flex items-center justify-center">
+						{/* TODO: implement next img  */}
+						<img
+							className="h-10 w-10 cursor-pointer rounded-full grayscale filter hover:grayscale-0"
+							src="https://avatars.githubusercontent.com/u/25880632?v=4"
+							alt=""
+						/>
+					</div>
+				</footer>
+			</Link>
 		</div>
 	);
 }
