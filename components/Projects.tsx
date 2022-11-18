@@ -1,10 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+	projects: Project[];
+};
 
-function Projects({}: Props) {
-	const projects = [1, 2, 3, 4, 5];
+function Projects({ projects }: Props) {
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -26,7 +29,7 @@ function Projects({}: Props) {
 							viewport={{ once: true }}
 							height={"400px"}
 							width={"400px"}
-							src="https://w1.pngwing.com/pngs/751/223/png-transparent-digital-marketing-icon-web-design-web-development-frontend-web-development-search-engine-optimization-user-interface-design-web-application-wordpress.png"
+							src={urlFor(project?.image).url()}
 						/>
 
 						<div className="max-w-6xl space-y-10 px-0 md:px-10">
@@ -34,14 +37,22 @@ function Projects({}: Props) {
 								<span className="underline decoration-[#F7AB0A]/50">
 									Case Study {i + 1} of {projects.length}:
 								</span>{" "}
-								UPS clone
+								{project?.title}
 							</h4>
 
+							<div className="flex items-center justify-center space-x-2">
+								{project?.technologies.map((technology) => (
+									<img
+										className="h-10 w-10"
+										key={technology._id}
+										src={urlFor(technology.image).url()}
+										alt=""
+									/>
+								))}
+							</div>
+
 							<p className="text-center text-lg md:text-left">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-								amet, itaque quisquam, dolorum in sunt, eveniet ex facilis
-								delectus repellat totam placeat eum inventore temporibus non nam
-								porro vel rerum.
+								{project?.summary}
 							</p>
 						</div>
 					</div>

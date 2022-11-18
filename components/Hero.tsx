@@ -3,16 +3,20 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
 import Link from "next/link";
-import profilePic from "../public/assets/me.jpg";
+// import profilePic from "../public/assets/me.jpg";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity"; // https://www.sanity.io/docs/image-url
 
-type Props = {};
+type Props = {
+	pageInfo: PageInfo;
+};
 
-export default function Hero({}: Props) {
+export default function Hero({ pageInfo }: Props) {
 	const [text, count] = useTypewriter({
 		words: [
-			"Hi, this is Stan Rocks",
-			"Guy-who-loves-coffee.tsx",
-			"<ButLovesToCodeMore />",
+			`Hi, this is ${pageInfo?.name}`,
+			`Guy-who-loves-coffee.tsx`,
+			`<ButLovesToCodeMore />`,
 		],
 		loop: true,
 		delaySpeed: 2000,
@@ -24,16 +28,16 @@ export default function Hero({}: Props) {
 			<BackgroundCircles />
 			<Image
 				className="relative mx-auto h-32 w-32 rounded-full object-cover"
-				src={profilePic}
+				src={urlFor(pageInfo?.heroImage).url()}
 				alt="Stan Rocks photo"
 				width={128}
 				height={128}
 				// blurDataURL="data:..." automatically provided
-				placeholder="blur" // Optional blur-up while loading
+				// placeholder="blur" // Optional blur-up while loading
 			/>
 			<div className="z-20">
 				<h2 className="-mr-[15px] pb-2 text-sm uppercase tracking-[15px] text-gray-500">
-					Software Engineer
+					{pageInfo?.role}
 				</h2>
 				<h1 className="px-10 text-5xl font-semibold lg:text-6xl">
 					<span className="mr-3">{text}</span>

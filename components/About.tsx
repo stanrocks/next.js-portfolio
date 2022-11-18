@@ -1,11 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 // import Image from "next/image";
 // import profilePic from "../public/assets/me.jpg";
 
-type Props = {};
+type Props = {
+	pageInfo: PageInfo;
+};
 
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -31,7 +35,7 @@ export default function About({}: Props) {
 				viewport={{
 					once: true,
 				}}
-				src="https://media-exp1.licdn.com/dms/image/D4E03AQHkwC3TtBDt4A/profile-displayphoto-shrink_800_800/0/1664961030970?e=1673481600&v=beta&t=-urmTYJe624e2r89CSi5RCR6EeJpSpk1zrZmdWGJZUM"
+				src={urlFor(pageInfo?.profilePic).url()}
 				className="x-56 md:h-95 -mb-20 w-56 flex-shrink-0 rounded-full object-cover md:mb-0 md:w-64 md:rounded-lg xl:h-[500px] xl:w-[500px]"
 			/>
 
@@ -41,12 +45,7 @@ export default function About({}: Props) {
 					<span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
 					background
 				</h4>
-				<p className="text-base">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ex
-					nostrum necessitatibus cupiditate ipsam inventore obcaecati eos! Ea
-					mollitia molestiae accusantium quasi pariatur est modi illum! Maiores
-					dolorum hic nulla.
-				</p>
+				<p className="text-base">{pageInfo?.backgroundInformation}</p>
 			</div>
 		</motion.div>
 	);
