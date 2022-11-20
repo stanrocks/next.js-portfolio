@@ -32,7 +32,9 @@ function ContactMe({}: Props) {
 			<div className="flex flex-col space-y-10">
 				<h4 className="text-center text-4xl font-semibold">
 					I have got just what you need.{" "}
-					<span className="underline decoration-[#F7AB0A]/50">Let's talk.</span>
+					<span className="underline decoration-[#F7AB0A]/50">
+						Let&apos;s talk.
+					</span>
 				</h4>
 
 				<div className="space-y-10">
@@ -48,7 +50,9 @@ function ContactMe({}: Props) {
 
 					<div className="flex items-center justify-center space-x-5">
 						<MapPinIcon className="h-7 w-7 animate-pulse text-[#F7AB0A]" />
-						<p className="text-2xl">World Wide</p>
+						<p className="text-2xl">
+							Currently Astana, Kazakhstan. Available World Wide.
+						</p>
 					</div>
 				</div>
 

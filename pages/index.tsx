@@ -40,7 +40,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 		// and add it to hero component's top padding I guess
 		<div className="z-0 h-screen overflow-y-scroll bg-[rgb(36,36,36)] text-white scrollbar overflow-x-hidden scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
 			<Head>
-				<title>Stan Rocks Portfolio</title>
+				<title>{pageInfo?.name} - Portfolio</title>
 			</Head>
 
 			<Header socials={socials} />
