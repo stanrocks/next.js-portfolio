@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Project } from "../typings";
 import { urlFor } from "../sanity";
+import Image from "next/image";
 
 type Props = {
 	projects: Project[];
@@ -23,16 +24,18 @@ function Projects({ projects }: Props) {
 					<div
 						key={project._id}
 						className="flex h-screen w-screen flex-shrink-0 snap-center flex-col items-center justify-center space-y-5 p-20 md:p-44">
-						{/* TODO: replace img to proper next img component */}
-						<motion.img
+						<motion.div
 							initial={{ y: -300, opacity: 0 }}
 							transition={{ duration: 1.2 }}
 							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							height={"400px"}
-							width={"400px"}
-							src={urlFor(project?.image).url()}
-						/>
+							viewport={{ once: true }}>
+							<Image
+								src={urlFor(project?.image).url()}
+								alt={project?.title}
+								height={400}
+								width={400}
+							/>
+						</motion.div>
 
 						<div className="max-w-6xl space-y-10 px-0 md:px-10">
 							<h4 className="text-center text-4xl font-semibold">
@@ -44,11 +47,13 @@ function Projects({ projects }: Props) {
 
 							<div className="flex items-center justify-center space-x-2">
 								{project?.technologies.map((technology) => (
-									<img
+									<Image
 										className="h-10 w-10"
 										key={technology._id}
+										width={40}
+										height={40}
 										src={urlFor(technology.image).url()}
-										alt=""
+										alt={technology.title}
 									/>
 								))}
 							</div>

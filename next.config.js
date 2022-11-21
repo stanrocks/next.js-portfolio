@@ -10,6 +10,12 @@ const nextConfig = {
 				port: "",
 				pathname: "/images/ctkvzkmb/production/**",
 			},
+			{
+				protocol: "https",
+				hostname: "avatars.githubusercontent.com",
+				port: "",
+				pathname: "/**",
+			},
 		],
 	},
 };

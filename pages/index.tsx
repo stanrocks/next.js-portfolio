@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import About from "../components/About";
 import ContactMe from "../components/ContactMe";
@@ -84,11 +85,12 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 			<Link href="#hero">
 				<footer className="sticky bottom-5 w-full cursor-pointer">
 					<div className="flex items-center justify-center">
-						{/* TODO: implement next img  */}
-						<img
+						<Image
 							className="h-10 w-10 cursor-pointer rounded-full grayscale filter hover:grayscale-0"
 							src="https://avatars.githubusercontent.com/u/25880632?v=4"
-							alt=""
+							width={40}
+							height={40}
+							alt="Back to top"
 						/>
 					</div>
 				</footer>
@@ -116,7 +118,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 		},
 		// Next.js will attempt to re-generate the page
 		// - When a request comes in
-		// - At most every10 seconds
+		// - At most every 10 seconds
 		revalidate: 10,
 	};
 };
