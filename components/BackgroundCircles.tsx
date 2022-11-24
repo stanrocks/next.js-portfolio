@@ -11,18 +11,18 @@ function BackgroundCircles({}: Props) {
 			}}
 			animate={{
 				scale: [1, 2, 2, 3, 1],
-				opacity: [0.1, 0.2, 0.4, 0.8, 1.0],
+				opacity: [0.2, 0.2, 0.4, 0.8, 1.0],
 				borderRadius: ["20%", "20%", "50%", "80%", "20%"],
 			}}
 			transition={{
 				duration: 2.5,
 			}}
-			className="relative flex items-center justify-center overflow-visible">
-			<div className="absolute mt-52 h-[200px] w-[200px] animate-ping rounded-full border border-[#333333] " />
-			<div className="absolute mt-52 h-[300px] w-[300px] animate-ping rounded-full border border-[#333333] " />
-			<div className="absolute mt-52 h-[500px] w-[500px] animate-ping rounded-full border border-[#333333] " />
-			<div className="absolute mt-52 h-[650px] w-[650px] animate-pulse rounded-full border border-[#F7AB0A] opacity-20" />
-			<div className="absolute mt-52 h-[800px] w-[800px] animate-pulse rounded-full border border-[#F7AB0A] opacity-20" />
+			className="absolute flex h-screen w-screen items-center justify-center overflow-hidden">
+			<div className="absolute aspect-square h-2/6 animate-ping rounded-full border border-[#333333] " />
+			<div className="absolute aspect-square h-3/6 animate-ping rounded-full border border-[#3333333] " />
+			<div className="absolute aspect-square h-5/6 animate-ping rounded-full border border-[#3333333] " />
+			<div className="absolute aspect-square h-3/5 animate-pulse rounded-full border border-[#F7AB0A] opacity-20" />
+			<div className="absolute aspect-square h-5/6 animate-pulse rounded-full border border-[#F7AB0A] opacity-20" />
 		</motion.div>
 	);
 }
