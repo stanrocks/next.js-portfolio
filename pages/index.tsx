@@ -26,20 +26,11 @@ type Props = {
 };
 
 const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
-	// TODO: Implement smooth scrolling with (probably?) react-scroll (https://github.com/fisshy/react-scroll)
-	// manual: https://www.digitalocean.com/community/tutorials/how-to-implement-smooth-scrolling-in-react
-	//
 	return (
 		// temporarily(?) disabled properties from style below:
-		// ver 1: overflow-y-scroll overflow-auto
-		// ver 2: overflow-x-hidden
 		// snap-y snap-mandatory overflow-scroll
-		// !! there is an issue with snap-y and snap-mandatory, possibly due to huge circles/animation. It also creates unwanted vertical space above and scrolling
-		// possible fixes:
-		// 1. change circle sizes (gotta do it anyway to adapt for mobile devices)
-		// 2. count header height (now it's fixed as 50+20+20px which is also questionable)
-		// and add it to hero component's top padding I guess
-		<div className="z-0 h-screen overflow-y-scroll bg-[rgb(36,36,36)] text-white scrollbar overflow-x-hidden scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
+		// h-screen - with that proper scrollbar works. but layout doesn't
+		<div className="relative z-0 h-screen overflow-x-hidden overflow-y-scroll bg-[rgb(36,36,36)] text-white scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 ">
 			<Head>
 				<title>{pageInfo?.name} - Portfolio</title>
 			</Head>

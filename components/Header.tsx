@@ -10,8 +10,10 @@ type Props = {
 
 export default function Header({ socials }: Props) {
 	return (
-		<header className="sticky top-0 z-20 mx-auto flex max-w-7xl items-start justify-between p-5 xl:items-center">
+		<header className="sticky top-0 z-20 mx-auto flex max-w-6xl justify-between p-5 xl:items-center">
+			{/*  */}
 			<motion.div
+				className="flex flex-row items-center"
 				initial={{
 					x: -500,
 					opacity: 0,
@@ -24,8 +26,7 @@ export default function Header({ socials }: Props) {
 				}}
 				transition={{
 					duration: 1.5,
-				}}
-				className="flex flex-row items-center">
+				}}>
 				{/* Social Icons */}
 				{socials.map((social) => (
 					<SocialIcon
@@ -38,6 +39,7 @@ export default function Header({ socials }: Props) {
 			</motion.div>
 
 			<motion.div
+				className="flex cursor-pointer flex-row items-center text-gray-300"
 				initial={{
 					x: 500,
 					opacity: 0,
@@ -50,8 +52,7 @@ export default function Header({ socials }: Props) {
 				}}
 				transition={{
 					duration: 1.5,
-				}}
-				className="flex cursor-pointer flex-row items-center text-gray-300">
+				}}>
 				<SocialIcon
 					url="#contact"
 					className="cursor-pointer"

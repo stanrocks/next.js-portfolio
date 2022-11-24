@@ -6,6 +6,7 @@ type Props = {};
 function BackgroundCircles({}: Props) {
 	return (
 		<motion.div
+			className="absolute inset-0 flex h-screen items-center justify-center"
 			initial={{
 				opacity: 0,
 			}}
@@ -16,8 +17,7 @@ function BackgroundCircles({}: Props) {
 			}}
 			transition={{
 				duration: 2.5,
-			}}
-			className="absolute flex h-screen w-screen items-center justify-center overflow-hidden">
+			}}>
 			<div className="absolute aspect-square h-2/6 animate-ping rounded-full border border-[#333333] " />
 			<div className="absolute aspect-square h-3/6 animate-ping rounded-full border border-[#3333333] " />
 			<div className="absolute aspect-square h-5/6 animate-ping rounded-full border border-[#3333333] " />

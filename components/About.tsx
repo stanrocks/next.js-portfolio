@@ -3,8 +3,6 @@ import { motion } from "framer-motion";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
 import Image from "next/image";
-// import Image from "next/image";
-// import profilePic from "../public/assets/me.jpg";
 
 type Props = {
 	pageInfo: PageInfo;
@@ -42,6 +40,7 @@ export default function About({ pageInfo }: Props) {
 					alt={pageInfo?.name}
 					width={500}
 					height={500}
+					priority
 				/>
 			</motion.div>
 
