@@ -30,7 +30,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 		// temporarily(?) disabled properties from style below:
 		// snap-y snap-mandatory overflow-scroll
 		// h-screen - with that proper scrollbar works. but layout doesn't
-		<div className="relative z-0 h-screen overflow-x-hidden overflow-y-scroll bg-[rgb(36,36,36)] text-white scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 ">
+		<div className="relative z-0 h-screen overflow-y-scroll bg-[rgb(36,36,36)] text-white overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 ">
 			<Head>
 				<title>{pageInfo?.name} - Portfolio</title>
 			</Head>
@@ -45,7 +45,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
 			<section
 				id="about"
-				className="snap-center">
+				className="snap-start">
 				<About pageInfo={pageInfo} />
 			</section>
 

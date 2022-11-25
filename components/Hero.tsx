@@ -22,11 +22,11 @@ export default function Hero({ pageInfo }: Props) {
 	});
 
 	return (
-		<div className="flex h-screen">
+		<div className="flex h-screen flex-col justify-center">
 			<BackgroundCircles />
 
 			{/* Hero image */}
-			<div className="absolute inset-0 flex h-screen ">
+			<div className="absolute inset-0 flex h-screen">
 				<Image
 					className="z-20 m-auto h-32 w-32 rounded-full object-cover"
 					src={urlFor(pageInfo?.heroImage).url()}
@@ -40,8 +40,8 @@ export default function Hero({ pageInfo }: Props) {
 			</div>
 
 			{/* Text block under image */}
-			<div className="relative z-20 mx-auto mt-[49vh] flex flex-col text-center">
-				<h2 className="-mr-[15px] p-4 text-sm uppercase tracking-[15px] text-gray-500">
+			<div className="relative z-20 mx-auto flex flex-col text-center">
+				<h2 className="-mr-[15px] py-4 px-8 text-sm uppercase tracking-[15px] text-gray-500">
 					{pageInfo?.role}
 				</h2>
 				<h1 className="text-xl font-semibold sm:text-3xl lg:text-6xl">
