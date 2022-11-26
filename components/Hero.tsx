@@ -22,7 +22,7 @@ export default function Hero({ pageInfo }: Props) {
 	});
 
 	return (
-		<div className="flex h-screen flex-col justify-center">
+		<div className="flex h-screen select-none flex-col justify-center">
 			<BackgroundCircles />
 
 			{/* Hero image */}
@@ -49,7 +49,7 @@ export default function Hero({ pageInfo }: Props) {
 					<Cursor cursorColor="#F7AB0A" />
 				</h1>
 
-				<div className="pt-5 ">
+				<nav className="pt-5 ">
 					<Link href="#about">
 						<button className="heroButton">About</button>
 					</Link>
@@ -62,7 +62,7 @@ export default function Hero({ pageInfo }: Props) {
 					<Link href="#projects">
 						<button className="heroButton">Projects</button>
 					</Link>
-				</div>
+				</nav>
 			</div>
 		</div>
 	);

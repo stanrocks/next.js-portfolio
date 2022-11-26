@@ -11,11 +11,11 @@ type Props = {
 export default function About({ pageInfo }: Props) {
 	return (
 		<motion.div
+			className="relative mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-10 xl:max-w-7xl"
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
-			transition={{ duration: 1.5 }}
-			className="relative mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-10 xl:max-w-7xl">
-			<h3 className="-mr-[20px] pt-28 pb-8 text-center text-2xl uppercase tracking-[20px] text-gray-500">
+			transition={{ duration: 1.5 }}>
+			<h3 className="-mr-[20px] select-none pt-24 pb-8 text-center text-2xl uppercase tracking-[20px] text-gray-500 landscape:pt-8">
 				About
 			</h3>
 			<div className="flex flex-col items-center md:flex-row md:items-center">
@@ -35,8 +35,6 @@ export default function About({ pageInfo }: Props) {
 					viewport={{
 						once: true,
 					}}>
-					{/* old version of style: */}
-					{/* h-56 md:h-95 hidden w-56 flex-shrink-0 rounded-full object-cover sm:block md:mb-0 md:w-64 md:rounded-lg xl:h-[500px] xl:w-[500px] */}
 					<Image
 						className="mb-8 h-56 w-56 rounded-full object-cover md:mr-10 md:rounded-lg xl:h-[500px] xl:w-[500px] xl:rounded-lg"
 						src={urlFor(pageInfo?.profilePic).url()}
@@ -46,8 +44,7 @@ export default function About({ pageInfo }: Props) {
 						priority
 					/>
 				</motion.div>
-				{/* old version of style: */}
-				{/* space-y-10 px-0 md:px-10 */}
+
 				<div className="">
 					<h4 className="pb-8 text-center text-4xl font-semibold md:text-left xl:text-center">
 						Here is a{" "}

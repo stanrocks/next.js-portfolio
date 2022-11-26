@@ -10,8 +10,8 @@ type Props = {
 
 export default function Header({ socials }: Props) {
 	return (
-		<div className="sticky top-0 z-30 bg-gradient-to-b from-[#202020] pb-20">
-			<header className="top-0 z-30 mx-auto flex max-w-6xl justify-between p-5 xl:items-center">
+		<div className="sticky top-0 z-30 select-none bg-gradient-to-b from-[#202020] pb-20">
+			<header className="mx-auto flex max-w-6xl justify-between p-5 xl:items-center">
 				{/*  */}
 				<motion.div
 					className="flex flex-row items-center"
