@@ -4,8 +4,8 @@ export default {
 	type: "document",
 	fields: [
 		{
-			name: "jobtitle",
-			title: "JobTitle",
+			name: "jobTitle",
+			title: "Job Title",
 			type: "string",
 		},
 		{
@@ -18,8 +18,8 @@ export default {
 		},
 		{
 			name: "company",
-			title: "Company",
-			type: "text",
+			title: "Company Name",
+			type: "string",
 		},
 		{
 			name: "dateStarted",
