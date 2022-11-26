@@ -27,6 +27,7 @@ export default function Header({ socials }: Props) {
 					}}
 					transition={{
 						duration: 1.5,
+						delay: 3,
 					}}>
 					{/* Social Icons */}
 					{socials.map((social) => (
@@ -53,6 +54,7 @@ export default function Header({ socials }: Props) {
 					}}
 					transition={{
 						duration: 1.5,
+						delay: 4,
 					}}>
 					<SocialIcon
 						url="#contact"

@@ -27,6 +27,7 @@ export default function About({ pageInfo }: Props) {
 					}}
 					transition={{
 						duration: 1.2,
+						delay: 2.5,
 					}}
 					whileInView={{
 						opacity: 1,
@@ -45,7 +46,10 @@ export default function About({ pageInfo }: Props) {
 					/>
 				</motion.div>
 
-				<div className="">
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 1.5, delay: 1 }}>
 					<h4 className="pb-8 text-center text-4xl font-semibold md:text-left xl:text-center">
 						Here is a{" "}
 						<span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
@@ -54,7 +58,7 @@ export default function About({ pageInfo }: Props) {
 					<p className="text-left text-base">
 						{pageInfo?.backgroundInformation}
 					</p>
-				</div>
+				</motion.div>
 			</div>
 		</motion.div>
 	);
