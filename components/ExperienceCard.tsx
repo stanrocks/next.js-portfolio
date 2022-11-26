@@ -8,12 +8,17 @@ type Props = { experience: Experience };
 
 export default function ExperienceCard({ experience }: Props) {
 	return (
-		<article className="flex w-[500px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[600px] xl:w-[900px] ">
+		// old style:
+		// flex w-[500px] flex-shrink-0 snap-center flex-col items-center overflow-hidden rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[600px] xl:w-[900px]
+		<article className="relative flex w-full flex-shrink-0 flex-col items-center overflow-hidden rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[512px] xl:w-[768px]">
 			<motion.div
-				initial={{ y: -100, opacity: 0 }}
+				className="absolute hidden self-end md:block xl:-mt-5 xl:-mr-5"
+				initial={{ y: -200, opacity: 0 }}
 				transition={{ duration: 1.2 }}
 				whileInView={{ y: 0, opacity: 1 }}
 				viewport={{ once: true }}>
+				{/* old style */}
+				{/* h-32 w-32 rounded-full object-cover object-center xl:h-[200px] xl:w-[200px] */}
 				<Image
 					className="h-32 w-32 rounded-full object-cover object-center xl:h-[200px] xl:w-[200px]"
 					src={urlFor(experience?.companyImage).url()}
@@ -23,13 +28,14 @@ export default function ExperienceCard({ experience }: Props) {
 				/>
 			</motion.div>
 
-			<div className="px-0 md:px-10">
-				<h4 className="text-4xl font-light">{experience.jobTitle}</h4>
-				<p className="mt-1 text-2xl font-bold">{experience.company}</p>
-				<div className="my-2 flex space-x-2">
+			<div className="px-0 lg:px-10">
+				<h4 className="pb-4 text-4xl font-light">{experience.jobTitle}</h4>
+				<p className="pb-4 text-2xl font-bold">{experience.company}</p>
+				<div className="flex space-x-2 pb-4">
 					{experience.technologies.map((technology) => (
 						<Image
 							className="h-10 w-10 rounded-full"
+							// TODO: proper unique id for a key
 							key={technology._id}
 							width={40}
 							height={40}
@@ -38,13 +44,12 @@ export default function ExperienceCard({ experience }: Props) {
 						/>
 					))}
 				</div>
-				<p className="py-5 uppercase text-gray-300">
-					{new Date(experience.dateStarted).toDateString()} -{" "}
-					{experience.isCurrentlyWorkingHere
-						? "Present"
-						: new Date(experience.dateEnded).toDateString()}
+				<p className="pb-4 uppercase text-gray-300">
+					{/* TODO: use semantic <time> tag */}
+					{experience.dateStarted} -{" "}
+					{experience.isCurrentlyWorkingHere ? "Present" : experience.dateEnded}
 				</p>
-				<ul className="ml-5 list-disc space-y-4 text-lg">
+				<ul className="ml-5 list-disc">
 					{/* TODO: proper unique id for a key */}
 					{experience.points.map((point, i) => (
 						<li key={i}>{point}</li>
