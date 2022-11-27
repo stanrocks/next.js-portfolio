@@ -10,17 +10,17 @@ export default function ExperienceCard({ experience }: Props) {
 	return (
 		// old style:
 		// flex w-[500px] flex-shrink-0 snap-center flex-col items-center overflow-hidden rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[600px] xl:w-[900px]
-		<article className="relative flex w-full flex-shrink-0 flex-col items-center overflow-hidden rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[512px] xl:w-[768px]">
+		<article className="relative flex w-full flex-shrink-0 flex-col items-center overflow-hidden rounded-lg bg-[#292929] opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[512px] xl:w-[640px]">
 			<motion.div
-				className="absolute hidden self-end md:block xl:-mt-5 xl:-mr-5"
+				className="absolute top-5 right-8 sm:top-10 sm:right-8"
 				initial={{ y: -200, opacity: 0 }}
-				transition={{ duration: 1.2 }}
+				transition={{ duration: 1.2, delay: 0.5 }}
 				whileInView={{ y: 0, opacity: 1 }}
 				viewport={{ once: true }}>
 				{/* old style */}
 				{/* h-32 w-32 rounded-full object-cover object-center xl:h-[200px] xl:w-[200px] */}
 				<Image
-					className="h-32 w-32 rounded-full object-cover object-center xl:h-[200px] xl:w-[200px]"
+					className="rounded-lg object-cover object-center opacity-60 grayscale transition duration-300 hover:opacity-90 hover:grayscale-0 sm:hover:opacity-100"
 					src={urlFor(experience?.companyImage).url()}
 					alt={experience?.company}
 					width={200}
@@ -28,13 +28,17 @@ export default function ExperienceCard({ experience }: Props) {
 				/>
 			</motion.div>
 
-			<div className="px-0 lg:px-10">
-				<h4 className="pb-4 text-4xl font-light">{experience.jobTitle}</h4>
-				<p className="pb-4 text-2xl font-bold">{experience.company}</p>
-				<div className="flex space-x-2 pb-4">
+			<div className="w-full p-5 sm:p-10">
+				<h4 className="z-1 text-shadow relative mr-[130px] pb-4 text-2xl font-light sm:mr-[160px] sm:text-4xl">
+					{experience.jobTitle}
+				</h4>
+				<p className="z-1 text-shadow relative mr-[130px] pb-4 text-xl font-bold sm:mr-[160px] sm:text-2xl">
+					{experience.company}
+				</p>
+				<div className="z-1 relative mr-[130px] flex space-x-2 pb-4 sm:mr-[160px]">
 					{experience.technologies.map((technology) => (
 						<Image
-							className="h-10 w-10 rounded-full"
+							className=" h-10 w-10 rounded-full"
 							// TODO: proper unique id for a key
 							key={technology._id}
 							width={40}
@@ -44,12 +48,12 @@ export default function ExperienceCard({ experience }: Props) {
 						/>
 					))}
 				</div>
-				<p className="pb-4 uppercase text-gray-300">
+				<p className="z-1 text-shadow relative pb-4 uppercase text-gray-300">
 					{/* TODO: use semantic <time> tag */}
 					{experience.dateStarted} -{" "}
 					{experience.isCurrentlyWorkingHere ? "Present" : experience.dateEnded}
 				</p>
-				<ul className="ml-5 list-disc">
+				<ul className="z-1 text-shadow relative ml-5 list-disc">
 					{/* TODO: proper unique id for a key */}
 					{experience.points.map((point, i) => (
 						<li key={i}>{point}</li>

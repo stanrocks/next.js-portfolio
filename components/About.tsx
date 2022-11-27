@@ -11,11 +11,11 @@ type Props = {
 export default function About({ pageInfo }: Props) {
 	return (
 		<motion.div
-			className="relative mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-10 xl:max-w-7xl"
+			className="relative mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-5 sm:px-10 xl:max-w-7xl"
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
 			transition={{ duration: 1.5 }}>
-			<h3 className="-mr-[20px] select-none pt-24 pb-8 text-center text-2xl uppercase tracking-[20px] text-gray-500 landscape:pt-8">
+			<h3 className="-mr-[14px] select-none pt-24 pb-8 text-center text-xl uppercase tracking-[14px] text-gray-500 sm:-mr-[20px] sm:text-2xl sm:tracking-[20px] landscape:pt-8">
 				About
 			</h3>
 			<div className="flex flex-col items-center md:flex-row md:items-center">
@@ -50,7 +50,7 @@ export default function About({ pageInfo }: Props) {
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 1.5, delay: 1 }}>
-					<h4 className="pb-8 text-center text-4xl font-semibold md:text-left xl:text-center">
+					<h4 className="pb-8 text-center text-2xl font-semibold sm:text-4xl md:text-left xl:text-center">
 						Here is a{" "}
 						<span className="underline decoration-[#F7AB0A]/50">little</span>{" "}
 						background
