@@ -12,7 +12,7 @@ function WorkExperience({ experiences }: Props) {
 		// old style
 		//relative mx-auto flex h-screen max-w-full flex-col items-center justify-evenly overflow-hidden px-10 text-left md:flex-row
 		<motion.div
-			className="relative flex min-h-screen max-w-full flex-col items-center justify-evenly overflow-hidden sm:px-10"
+			className="relative flex min-h-screen max-w-full flex-col items-center justify-evenly overflow-hidden font-light sm:px-10"
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
 			transition={{ duration: 1.5 }}>

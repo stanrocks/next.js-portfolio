@@ -10,7 +10,7 @@ type Props = {
 
 export default function Header({ socials }: Props) {
 	return (
-		<div className="sticky top-0 z-30 select-none bg-gradient-to-b from-[#202020] pb-20">
+		<div className="sticky top-0 z-30 select-none bg-gradient-to-b from-[#202020] pb-20 font-light">
 			<header className="mx-auto flex max-w-6xl justify-between p-5 xl:items-center">
 				{/*  */}
 				<motion.div
@@ -32,6 +32,7 @@ export default function Header({ socials }: Props) {
 					{/* Social Icons */}
 					{socials.map((social) => (
 						<SocialIcon
+							className="hover:sepia "
 							key={social._id}
 							fgColor="gray"
 							bgColor="transparent"
@@ -41,7 +42,7 @@ export default function Header({ socials }: Props) {
 				</motion.div>
 
 				<motion.div
-					className="flex cursor-pointer flex-row items-center text-gray-300"
+					className="anim group flex animate-pulse cursor-pointer flex-row items-center text-gray-300"
 					initial={{
 						x: 500,
 						opacity: 0,
@@ -58,13 +59,13 @@ export default function Header({ socials }: Props) {
 					}}>
 					<SocialIcon
 						url="#contact"
-						className="cursor-pointer"
+						className="cursor-pointer group-hover:sepia"
 						network="email"
 						fgColor="gray"
 						bgColor="transparent"
 					/>
 					<Link href="#contact">
-						<p className="hidden text-sm uppercase text-gray-400 md:inline-flex">
+						<p className="text-shadow hidden uppercase tracking-widest text-gray-500 group-hover:text-[#F7AB0A]/40 sm:text-sm sm:tracking-[0.3em] md:inline-flex">
 							Get In Touch
 						</p>
 					</Link>

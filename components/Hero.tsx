@@ -27,24 +27,28 @@ export default function Hero({ pageInfo }: Props) {
 
 			{/* Hero image */}
 			<div className="absolute inset-0 flex h-screen">
-				<Image
-					className="z-20 m-auto h-32 w-32 rounded-full object-cover"
-					src={urlFor(pageInfo?.heroImage).url()}
-					alt="Stan Rocks photo"
-					width={128}
-					height={128}
-					priority
-					// blurDataURL="data:..." automatically provided
-					// placeholder="blur" // Optional blur-up while loading
-				/>
+				<Link
+					className="m-auto hover:brightness-110"
+					href="#about">
+					<Image
+						className="z-20 h-32 w-32 rounded-full object-cover"
+						src={urlFor(pageInfo?.heroImage).url()}
+						alt="Stan Rocks photo"
+						width={128}
+						height={128}
+						priority
+						// blurDataURL="data:..." automatically provided
+						// placeholder="blur" // Optional blur-up while loading
+					/>
+				</Link>
 			</div>
 
 			{/* Text block under image */}
 			<div className="relative z-20 mx-auto flex flex-col text-center">
-				<h2 className="-mr-[15px] py-4 px-8 text-sm uppercase tracking-[15px] text-gray-500">
+				<h2 className="-mr-[15px] py-4 px-8 text-sm uppercase tracking-[15px] text-gray-500 sm:text-base">
 					{pageInfo?.role}
 				</h2>
-				<h1 className="text-xl font-semibold sm:text-3xl lg:text-6xl">
+				<h1 className="text-xl sm:text-3xl lg:text-5xl">
 					{text}
 					<Cursor cursorColor="#F7AB0A" />
 				</h1>

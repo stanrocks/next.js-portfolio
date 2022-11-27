@@ -29,10 +29,10 @@ export default function ExperienceCard({ experience }: Props) {
 			</motion.div>
 
 			<div className="w-full p-5 sm:p-10">
-				<h4 className="z-1 text-shadow relative mr-[130px] pb-4 text-2xl font-light sm:mr-[160px] sm:text-4xl">
+				<h4 className="z-1 text-shadow relative mr-[130px] pb-4 text-2xl  sm:mr-[160px] sm:text-3xl">
 					{experience.jobTitle}
 				</h4>
-				<p className="z-1 text-shadow relative mr-[130px] pb-4 text-xl font-bold sm:mr-[160px] sm:text-2xl">
+				<p className="z-1 text-shadow relative mr-[130px] pb-4 text-xl  sm:mr-[160px] sm:text-2xl">
 					{experience.company}
 				</p>
 				<div className="z-1 relative mr-[130px] flex space-x-2 pb-4 sm:mr-[160px]">
@@ -48,12 +48,12 @@ export default function ExperienceCard({ experience }: Props) {
 						/>
 					))}
 				</div>
-				<p className="z-1 text-shadow relative pb-4 uppercase text-gray-300">
+				<p className="z-1 text-shadow relative pb-4 text-base ">
 					{/* TODO: use semantic <time> tag */}
 					{experience.dateStarted} -{" "}
 					{experience.isCurrentlyWorkingHere ? "Present" : experience.dateEnded}
 				</p>
-				<ul className="z-1 text-shadow relative ml-5 list-disc">
+				<ul className="z-1 text-shadow relative ml-5 list-disc text-base">
 					{/* TODO: proper unique id for a key */}
 					{experience.points.map((point, i) => (
 						<li key={i}>{point}</li>
