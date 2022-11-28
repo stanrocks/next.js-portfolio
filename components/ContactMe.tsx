@@ -34,11 +34,12 @@ function ContactMe({}: Props) {
 			</h3>
 
 			<div className="flex flex-col space-y-5">
-				<h4 className="pb-4 text-center text-xl font-light sm:text-2xl">
+				<h4 className="max-w-lg pb-4 text-center text-xl font-light sm:text-2xl">
 					I have got just what you need.{" "}
 					<span className="underline decoration-[#F7AB0A]/50">
 						Let&apos;s talk.
-					</span>
+					</span>{" "}
+					Add links to telegram, github. linkedin here.
 				</h4>
 
 				<div className="space-y-5">

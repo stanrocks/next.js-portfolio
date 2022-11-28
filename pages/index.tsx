@@ -50,7 +50,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 		// snap-y snap-mandatory overflow-scroll
 		// h-screen - with that proper scrollbar works. but layout doesn't
 		// TODO: fix custom scrollbar
-		<div className="relative z-0 overflow-y-scroll break-words bg-[rgb(36,36,36)] text-white scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 sm:scrollbar-thin">
+		<div className="relative z-0 overflow-y-scroll break-words bg-[rgb(36,36,36)] text-white overflow-x-hidden scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 sm:scrollbar-thin">
 			<Head>
 				<title>{pageInfo?.name} - Portfolio</title>
 			</Head>
