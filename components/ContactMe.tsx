@@ -92,7 +92,7 @@ function ContactMe({}: Props) {
 					/>
 					<button
 						type="submit"
-						className="rounded-md bg-[#F7AB0A] py-5 px-10 text-lg font-normal text-black hover:brightness-105">
+						className="select-none rounded-md bg-[#F7AB0A] py-5 px-10 text-lg font-normal text-black hover:brightness-105">
 						Submit
 					</button>
 				</form>

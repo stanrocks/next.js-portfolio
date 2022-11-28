@@ -3,14 +3,20 @@ import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Social } from "../typings";
+import { classNames } from "../utils/classNames";
 
 type Props = {
 	socials: Social[];
+	isVisible: boolean;
 };
 
-export default function Header({ socials }: Props) {
+export default function Header({ socials, isVisible }: Props) {
 	return (
-		<div className="sticky top-0 z-30 select-none bg-gradient-to-b from-[#202020] pb-20 font-light">
+		<div
+			className={classNames(
+				isVisible ? "opacity-100" : "opacity-0",
+				"fixed top-0 z-30 w-screen select-none bg-gradient-to-b from-[#202020] pb-20 font-light transition-opacity	duration-1000"
+			)}>
 			<header className="mx-auto flex max-w-6xl justify-between p-5 xl:items-center">
 				{/*  */}
 				<motion.div

@@ -44,7 +44,7 @@ export default function Hero({ pageInfo }: Props) {
 			</div>
 
 			{/* Text block under image */}
-			<div className="relative z-20 mx-auto flex flex-col text-center">
+			<div className="relative z-20 m-auto flex translate-y-[160px] flex-col text-center">
 				<h2 className="-mr-[15px] py-4 px-8 text-sm uppercase tracking-[15px] text-gray-500 sm:text-base">
 					{pageInfo?.role}
 				</h2>
@@ -53,7 +53,7 @@ export default function Hero({ pageInfo }: Props) {
 					<Cursor cursorColor="#F7AB0A" />
 				</h1>
 
-				<nav className="pt-5 ">
+				<nav className="mx-auto max-w-[24rem] pt-5 sm:max-w-[32rem]">
 					<Link href="#about">
 						<button className="heroButton">About</button>
 					</Link>
@@ -65,6 +65,9 @@ export default function Hero({ pageInfo }: Props) {
 					</Link>
 					<Link href="#projects">
 						<button className="heroButton">Projects</button>
+					</Link>
+					<Link href="#contact">
+						<button className="heroButton">Contact</button>
 					</Link>
 				</nav>
 			</div>
